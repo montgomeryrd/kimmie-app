@@ -35,13 +35,15 @@ class Dashboard extends React.Component {
         this.setState({item : ""});
     }
     // Task functions -----------------------
-    addTask = () =>{
+    addTask = (task) =>{
+        task.id = Math.random() * 10;
+        task.content = this.state.task;
+        this.setState({tasks : [...this.state.tasks, task]});
+    }
+    removeTask = (id) => {
 
     }
-    removeTask = () => {
-
-    }
-    completeTask = () => {
+    completeTask = (id) => {
 
     }
     clearCompletedTasks = () => {
