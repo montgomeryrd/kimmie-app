@@ -1,5 +1,4 @@
 import React from 'react';
-import Main from '../main/Main';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -35,14 +34,19 @@ class Dashboard extends React.Component {
         this.setState({item : ""});
     }
     // Task functions -----------------------
-    addTask = () =>{
-
+    addTask = (task) =>{
+        task.id = Math.random() * 10;
+        task.status = true;
+        task.content = this.state.task;
+        this.setState({tasks : [...this.state.tasks, task]});
     }
-    removeTask = () => {
-
+    removeTask = (id) => {
+        const tasks = this.state.tasks.filter(task => task.id !== id);
+        this.setState({tasks : tasks})
     }
-    completeTask = () => {
-
+    completeTask = (id) => {
+        const task = this.state.tasks.filter(task => task.id === id)
+        
     }
     clearCompletedTasks = () => {
 
@@ -63,12 +67,10 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="dashboard-container">
-
-                </div>
-                <div className="main-container">
-                    <Main />
+            <div className="dashboard-container">
+                <div>
+                    <span>tasks page</span>
+                    <span>shopping list</span>
                 </div>
             </div>
         )
