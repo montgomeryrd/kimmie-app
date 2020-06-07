@@ -13,7 +13,7 @@ const TaskPage = (props) => {
             return (
                 <div className="task" key={task.id = index}>
                     <span className="task-complete" style={{opacity : task.status ? 1 : .3}} onClick={() => {props.completeTask(task.id)}}>
-                        {task}
+                        {task.content}
                         <span className="remove-task" onClick={() => {props.removeTask(index)}}>
                             undo
                         </span>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -42,27 +43,38 @@ class Dashboard extends React.Component {
     }
     removeTask = (id) => {
         const tasks = this.state.tasks.filter(task => task.id !== id);
-        this.setState({tasks : tasks})
+        this.setState({tasks : tasks});
     }
     completeTask = (id) => {
-        const task = this.state.tasks.filter(task => task.id === id)
-        
+        const task = this.state.tasks.filter(task => task.id === id);
+        task.status = false;
+        const tasks = this.state.tasks.filter(task => task.id !== id);
+        this.setState({tasks : tasks}, () => this.setState({tasks : [...this.state.tasks, task]}));
     }
     clearCompletedTasks = () => {
-
+        const tasks = this.state.tasks.filter(task => task.status !== false);
+        this.setState({tasks : tasks});
     }
     // Item functions -----------------------
-    addItem = () => {
-
+    addItem = (item) => {
+        item.id = Math.random() * 10;
+        item.status = true;
+        item.content = this.state.item;
+        this.setState({items : [...this.state.items, item]});
     }
-    removeItem = () => {
-
+    removeItem = (id) => {
+        const items = this.state.items.filter(item => item.id !== id);
+        this.setState({items : items})
     }
-    completeItem = () => {
-
+    completeItem = (id) => {
+        const item = this.state.items.filter(item => item.id === id);
+        item.status = false;
+        const items = this.state.items.filter(item => item.id !== id);
+        this.setState({items : items}, () => this.setState({items : [...this.state.items, item]}));
     }
     clearCompletedItems = () => {
-
+        const items = this.state.items.filter(item => item.status !== false);
+        this.setState({items : items});
     }
 
     render() {
