@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import TaskPage from '../task-page/TaskPage';
+import ShoppingList from '../shopping-list/ShoppingList';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -39,7 +41,10 @@ class Dashboard extends React.Component {
         task.id = Math.random() * 10;
         task.status = true;
         task.content = this.state.task;
-        this.setState({tasks : [...this.state.tasks, task]});
+        console.log(task)
+        this.setState({tasks : [...this.state.tasks, task]}, () => {
+            console.log(this.state.tasks)
+        });
     }
     removeTask = (id) => {
         const tasks = this.state.tasks.filter(task => task.id !== id);
@@ -82,7 +87,22 @@ class Dashboard extends React.Component {
             <div className="dashboard-container">
                 <div>
                     <span>tasks page</span>
+                    <TaskPage 
+                        task = {this.state.task}
+                        tasks = {this.state.tasks}
+                        completedTasks = {this.state.completedTasks}
+                        handleChangeTasks = {this.handleChangeTasks}
+                        handleSubmitTasks = {this.handleSubmitTasks}
+                    />
                     <span>shopping list</span>
+                    <ShoppingList 
+                        item = {this.state.item}
+                        items = {this.state.items}
+                        completedItems = {this.state.completedItems}
+                        handleChangeItems = {this.handleChangeItems}
+                        handleSubmitItems = {this.handleSubmitItems}
+                    />
+                    <img src="../../assets/flower-sunflowers-arrangement-png-clip-art.png" alt="sunflowers"/>
                 </div>
             </div>
         )

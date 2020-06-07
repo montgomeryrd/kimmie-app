@@ -6,7 +6,6 @@ const TaskPage = (props) => {
     const toggle = () => setShow(!show);
 
     const today = new Date().toLocaleString('en-us', {  weekday: 'long' });
-    // const today = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'][new Date().getDay()];
 
     const list = props.tasks.length ? (
         props.tasks.map((task, index) => {

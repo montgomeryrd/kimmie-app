@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemForm from '../task-form/ItemForm';
+import ItemForm from '../item-form/ItemForm';
 
 const ShoppingList = (props) => {
     const [show, setShow] = useState(false);
