@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemForm from '../task-form/ItemForm';
+import ItemForm from '../item-form/ItemForm';
 
 const ShoppingList = (props) => {
     const [show, setShow] = useState(false);
@@ -9,8 +9,8 @@ const ShoppingList = (props) => {
         props.items.map((item, index) => {
             return (
                 <div className="item" key={item.id = index}>
-                    <span className="item-complete" style={{opacity : item.status ? 1 : .3}} onClick={() => {props.completeTask(item.id)}}>
-                        {item}
+                    <span className="item-complete" style={{opacity : item.status ? 1 : .3}} onClick={() => {props.completeItem(item.id)}}>
+                        {item.content}
                     </span>
                 </div>
             )
@@ -22,15 +22,23 @@ const ShoppingList = (props) => {
     )
     return (
         <div className="item-page-container">
-            <h1>GROCERY'S AND YEET!</h1>
+            <h1>GROCERIES AND YEET!</h1>
             <span>...did I say it right?</span>
-            { show ? <span onClick={toggle}>add items</span> : <span onClick={toggle}>hide form</span> }
             { show ?
                 <div className="item-view" unselectable="on">
-                    {list}
+                    <span onClick={toggle}>add items</span>
                 </div>
             : 
-                <ItemForm />
+                <div>
+                    <span onClick={toggle}>hide form</span>
+                    <ItemForm 
+                        item = {props.item}
+                        items = {props.items}
+                        completedItems = {props.completedItems}
+                        handleChangeItems = {props.handleChangeItems}
+                        handleSubmitItems = {props.handleSubmitItems}
+                    />
+                </div>
             }
         </div>
     )
