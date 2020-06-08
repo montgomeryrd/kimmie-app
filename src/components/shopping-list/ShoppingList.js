@@ -24,13 +24,21 @@ const ShoppingList = (props) => {
         <div className="item-page-container">
             <h1>GROCERIES AND YEET!</h1>
             <span>...did I say it right?</span>
-            { show ? <span onClick={toggle}>add items</span> : <span onClick={toggle}>hide form</span> }
             { show ?
                 <div className="item-view" unselectable="on">
-                    {list}
+                    <span onClick={toggle}>add items</span>
                 </div>
             : 
-                <ItemForm />
+                <div>
+                    <span onClick={toggle}>hide form</span>
+                    <ItemForm 
+                        item = {props.item}
+                        items = {props.items}
+                        completedItems = {props.completedItems}
+                        handleChangeItems = {props.handleChangeItems}
+                        handleSubmitItems = {props.handleSubmitItems}
+                    />
+                </div>
             }
         </div>
     )

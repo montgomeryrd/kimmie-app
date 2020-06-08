@@ -3,7 +3,7 @@ import React from 'react';
 const ItemForm = (props) => {
     return (
         <div className="item-form-container">
-            <form action="/dashboard" method="post">
+            <form action="/dashboard" method="post" onSubmit={props.handleSubmitItems}>
                 <input
                     type="text"
                     id="item"
@@ -11,6 +11,7 @@ const ItemForm = (props) => {
                     value={props.item}
                     onChange={props.handleChangeItems}
                     required={true}
+                    autoComplete="off"
                     placeholder="I need to buy..."
                 />
                 <button type="submit" onSubmit={props.handleSubmitItems}>add item</button>

@@ -5,17 +5,14 @@ const TaskPage = (props) => {
     const [show, setShow] = useState(false);
     const toggle = () => setShow(!show);
 
-    const today = new Date().toLocaleString('en-us', {  weekday: 'long' });
+    const today = new Date().toLocaleString('en-us', {  weekday: 'long' }).toLowerCase();
 
-    const list = props.tasks.length ? (
+    const list = !props.tasks ? window.location.reload(true) : props.tasks.length ? (
         props.tasks.map((task, index) => {
             return (
-                <div className="task" key={task.id = index}>
-                    <span className="task-complete" style={{opacity : task.status ? 1 : .3}} onClick={() => {props.completeTask(task.id)}}>
-                        {task.content}
-                        <span className="remove-task" onClick={() => {props.removeTask(index)}}>
-                            undo
-                        </span>
+                <div className="task" key={index}>
+                    <span className="task-complete" style={{opacity : props.completedTasks.includes(task) ? .2 : 1}} onClick={() => {props.completeTask(index)}}>
+                        {task.task}
                     </span>
                 </div>
             )
@@ -27,16 +24,25 @@ const TaskPage = (props) => {
     )
     return (
         <div className="task-page-container">
-            <h1>{today}'s Tasks</h1>
-            { show ? <span onClick={toggle}>add tasks</span> : <span onClick={toggle}>hide form</span> }
+            <h1>{today} tasks</h1>
             { show ?
                 <div className="task-view" unselectable="on">
-                    {list}
+                    <span onClick={toggle}>add tasks</span>
                 </div>
             : 
-                <TaskForm />
+                <div>
+                    <span onClick={toggle}>hide form</span>
+                    <TaskForm
+                        task = {props.task}
+                        handleChangeTasks = {props.handleChangeTasks}
+                        handleSubmitTasks = {props.handleSubmitTasks}
+                    />
+                </div>
             }
-            
+            <div>
+                {list}
+                <button onClick={props.clearCompletedTasks}>clear</button>
+            </div>
         </div>
     )
 }
