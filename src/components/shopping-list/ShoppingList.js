@@ -44,9 +44,9 @@ const ShoppingList = (props) => {
                     <button className="clear-btn" onClick={props.clearCompletedItems}>clear completed items</button>
                 :
                     <div className="groceries">
-                        <img className="empty" width="100px" src={grocerys} alt="groceries"/>
-                        <img className="empty" width="100px" src={grocerys} alt="groceries"/>
-                        <img className="empty" width="100px" src={grocerys} alt="groceries"/>
+                        <img className="empty" width="25%" src={grocerys} alt="groceries"/>
+                        <img className="empty" width="25%" src={grocerys} alt="groceries"/>
+                        <img className="empty" width="25%" src={grocerys} alt="groceries"/>
                     </div>
                 }
             </div>

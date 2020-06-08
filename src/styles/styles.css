@@ -78,7 +78,7 @@ body {
     background: none;
     padding: 20px;
     font-size: 4rem;
-    width: 40%;
+    width: 50%;
     border-bottom-left-radius: 10mm;
 }
 .submit {
@@ -130,6 +130,7 @@ body {
 }
 .empty {
     margin-top: 5%;
+    font-size: 4rem;
 }
 .groceries {
     display: block;
