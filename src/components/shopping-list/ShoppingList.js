@@ -5,12 +5,12 @@ const ShoppingList = (props) => {
     const [show, setShow] = useState(false);
     const toggle = () => setShow(!show);
 
-    const list = props.items.length ? (
+    const list = !props.items ? window.location.reload(true) : props.items.length ? (
         props.items.map((item, index) => {
             return (
-                <div className="item" key={item.id = index}>
-                    <span className="item-complete" style={{opacity : item.status ? 1 : .3}} onClick={() => {props.completeItem(item.id)}}>
-                        {item.content}
+                <div className="item" key={index}>
+                    <span className="item-complete" style={{opacity : props.completedItems.includes(item) ? .2 : 1}} onClick={() => {props.completeItem(index)}}>
+                        {item.item}
                     </span>
                 </div>
             )
@@ -33,13 +33,15 @@ const ShoppingList = (props) => {
                     <span onClick={toggle}>hide form</span>
                     <ItemForm 
                         item = {props.item}
-                        items = {props.items}
-                        completedItems = {props.completedItems}
                         handleChangeItems = {props.handleChangeItems}
                         handleSubmitItems = {props.handleSubmitItems}
                     />
                 </div>
             }
+            <div>
+                {list}
+                <button onClick={props.clearCompletedItems}>clear</button>
+            </div>
         </div>
     )
 }

@@ -6,7 +6,8 @@ const TaskPage = (props) => {
     const toggle = () => setShow(!show);
 
     const today = new Date().toLocaleString('en-us', {  weekday: 'long' }).toLowerCase();
-
+    const total = props.tasks.length - props.completedTasks.length;
+    
     const list = !props.tasks ? window.location.reload(true) : props.tasks.length ? (
         props.tasks.map((task, index) => {
             return (
@@ -24,7 +25,7 @@ const TaskPage = (props) => {
     )
     return (
         <div className="task-page-container">
-            <h1>{today} tasks</h1>
+            <h1>{today}'s tasks {total}</h1>
             { show ?
                 <div className="task-view" unselectable="on">
                     <span onClick={toggle}>add tasks</span>

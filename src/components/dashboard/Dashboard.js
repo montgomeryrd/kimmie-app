@@ -1,7 +1,7 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import TaskPage from '../task-page/TaskPage';
-// import ShoppingList from '../shopping-list/ShoppingList';
+import ShoppingList from '../shopping-list/ShoppingList';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -40,7 +40,6 @@ class Dashboard extends React.Component {
     addTask = (task) =>{
         this.setState({tasks : [...this.state.tasks, task]});
     }
-
     completeTask = (index) => {
         if(this.state.completedTasks.includes(this.state.tasks[index])) {
             const i = this.state.completedTasks.indexOf(this.state.tasks[index]);
@@ -49,9 +48,7 @@ class Dashboard extends React.Component {
             this.setState({completedTasks : completedTasks});
         } else {
             let completedTasks = [...this.state.completedTasks, this.state.tasks[index]];
-            this.setState({completedTasks : completedTasks}, () => {
-                console.log("completedTasks ", this.state.completedTasks)
-            });
+            this.setState({completedTasks : completedTasks});
         }
     }
     clearCompletedTasks = () => {
@@ -61,55 +58,61 @@ class Dashboard extends React.Component {
         this.setState({completedTasks : completedTasks});
     }
     // Item functions -----------------------
-    // addItem = (item) => {
-    //     item.id = Math.random() * 10;
-    //     item.status = true;
-    //     item.content = this.state.item;
-    //     this.setState({items : [...this.state.items, item]});
-    // }
-    // removeItem = (id) => {
-    //     const items = this.state.items.filter(item => item.id !== id);
-    //     this.setState({items : items})
-    // }
-    // completeItem = (id) => {
-    //     const item = this.state.items.filter(item => item.id === id);
-    //     item.status = false;
-    //     const items = this.state.items.filter(item => item.id !== id);
-    //     this.setState({items : items}, () => this.setState({items : [...this.state.items, item]}));
-    // }
-    // clearCompletedItems = () => {
-    //     const items = this.state.items.filter(item => item.status !== false);
-    //     this.setState({items : items});
-    // }
+    addItem = (item) => {
+        this.setState({items : [...this.state.items, item]});
+    }
+    completeItem = (index) => {
+        if(this.state.completedItems.includes(this.state.items[index])) {
+            const i = this.state.completedItems.indexOf(this.state.items[index]);
+            let completedItems = this.state.completedItems;
+            completedItems.splice(i, 1);
+            this.setState({completedItems : completedItems});
+        } else {
+            let completedItems = [...this.state.completedItems, this.state.items[index]];
+            this.setState({completedItems : completedItems});
+        }
+    }
+    clearCompletedItems = () => {
+        let items = [], completedItems = [];
+        this.state.items.forEach(item => !this.state.completedItems.includes(item) ? items.push(item) : item);
+        this.setState({items : items});
+        this.setState({completedItems : completedItems});
+    }
 
     render() {
         return (
             <div className="dashboard-container">
-                <div>
-                    <span>tasks page</span>
-                    <TaskPage 
-                        task = {this.state.task}
-                        tasks = {this.state.tasks}
-                        completedTasks = {this.state.completedTasks}
-                        removeTask = {this.removeTask}
-                        completeTask = {this.completeTask}
-                        clearCompletedTasks = {this.clearCompletedTasks}
-                        handleChangeTasks = {this.handleChangeTasks}
-                        handleSubmitTasks = {this.handleSubmitTasks}
-                    />
-                    {/* <span>shopping list</span>
-                    <ShoppingList 
-                        item = {this.state.item}
-                        items = {this.state.items}
-                        completedItems = {this.state.completedItems}
-                        removeItem = {this.removeItem}
-                        completeItem = {this.completeItem}
-                        clearCompletedItems = {this.clearCompletedItems}
-                        handleChangeItems = {this.handleChangeItems}
-                        handleSubmitItems = {this.handleSubmitItems}
-                    /> */}
-                    <img src="../../assets/flower-sunflowers-arrangement-png-clip-art.png" alt="sunflowers"/>
-                </div>
+                <Router>
+                    <NavLink to="/tasks" style={{ textDecoration: 'none' }}>
+                        <h2>Today's Tasks</h2>
+                    </NavLink>
+                    <NavLink to="/shopping" style={{ textDecoration : 'none' }}>
+                        <h2>Shopping List</h2>
+                    </NavLink>
+
+                    <Route path="/tasks" render={props =>
+                        (<TaskPage 
+                            task = {this.state.task}
+                            tasks = {this.state.tasks}
+                            completedTasks = {this.state.completedTasks}
+                            completeTask = {this.completeTask}
+                            clearCompletedTasks = {this.clearCompletedTasks}
+                            handleChangeTasks = {this.handleChangeTasks}
+                            handleSubmitTasks = {this.handleSubmitTasks}
+                        />)
+                    }/>
+                    <Route path="/shopping" render={props =>
+                        (<ShoppingList
+                            item = {this.state.item}
+                            items = {this.state.items}
+                            completedItems = {this.state.completedItems}
+                            completeItem = {this.completeItem}
+                            clearCompletedItems = {this.clearCompletedItems}
+                            handleChangeItems = {this.handleChangeItems}
+                            handleSubmitItems = {this.handleSubmitItems}
+                        />)
+                    }/>
+                </Router>
             </div>
         )
     }
