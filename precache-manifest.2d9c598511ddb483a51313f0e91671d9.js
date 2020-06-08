@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a38c783c30e9d143b1e7e13ca5883ae2",
+    "revision": "0a6b0af1a128655258821b2705a9fc4b",
     "url": "/kimmie-app/index.html"
   },
   {
-    "revision": "824da7c89ba63cb898aa",
-    "url": "/kimmie-app/static/css/main.82797e0d.chunk.css"
+    "revision": "1a4cae42a9ed4285d9ce",
+    "url": "/kimmie-app/static/css/main.98cd9f71.chunk.css"
   },
   {
     "revision": "65d9c9ecd3b1bdd91573",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kimmie-app/static/js/2.83ac2a41.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "824da7c89ba63cb898aa",
+    "revision": "1a4cae42a9ed4285d9ce",
     "url": "/kimmie-app/static/js/main.b38e9781.chunk.js"
   },
   {
@@ -40,7 +40,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kimmie-app/static/media/shopping-cart.e7b4603e.svg"
   },
   {
-    "revision": "e9c5041f46c650ba691b50df38d62d5d",
-    "url": "/kimmie-app/static/media/sunt.e9c5041f.jpg"
+    "revision": "e075e474f85c375210c548628601b0e2",
+    "url": "/kimmie-app/static/media/sunr.e075e474.jpg"
   }
 ]);
