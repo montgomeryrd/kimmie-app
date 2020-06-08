@@ -41,7 +41,7 @@ const ShoppingList = (props) => {
             <div className="list-container">
                 {list}
                 { props.items.length ?
-                    <button className="clear-btn" onClick={props.clearCompletedItems}>clear completed items</button>
+                    <button className="clear-btn" onClick={props.clearCompletedItems}>clear acquired items</button>
                 :
                     <div className="groceries">
                         <img className="empty" width="25%" src={grocerys} alt="groceries"/>
