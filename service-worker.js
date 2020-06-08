@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kimmie-app/precache-manifest.2d9c598511ddb483a51313f0e91671d9.js"
+  "/kimmie-app/precache-manifest.08cabedb4985c9d1443eb755e47c2e3d.js"
 );
 
 self.addEventListener('message', (event) => {
