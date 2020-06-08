@@ -46,7 +46,7 @@ const TaskPage = (props) => {
                 { props.tasks.length ?
                     <button className="clear-btn" onClick={props.clearCompletedTasks}>clear completed tasks</button>
                 : props.done ? 
-                    <img className="like" width="25%" src={like} alt="thumbs up"/> 
+                    <img className="like" width="50%" src={like} alt="thumbs up"/> 
                 : 
                     <p className="empty">empty list</p>
                 }

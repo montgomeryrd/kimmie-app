@@ -97,7 +97,7 @@ body {
     background: none;
     padding: 20px;
     font-size: 4rem;
-    width: 40%;
+    width: 50%;
     border-bottom-left-radius: 10mm;
 }
 .list-container {
@@ -126,7 +126,7 @@ body {
 }
 .like {
     margin-top: 10%;
-    margin-right: 50%;
+    margin-right: 40%;
 }
 .empty {
     margin-top: 5%;
