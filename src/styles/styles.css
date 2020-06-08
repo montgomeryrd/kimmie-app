@@ -27,7 +27,7 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 body {
-    background-image: url("../assets/sunt.jpg");
+    background-image: url("../assets/sunr.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -59,7 +59,7 @@ body {
 /* Task Page and Shopping List Styles */
 .title {
     font-family: 'Quicksand', sans-serif;
-    font-size: 4rem;
+    font-size: 5rem;
     text-align: center;
     padding: 5px;
 }
@@ -78,7 +78,7 @@ body {
     background: none;
     padding: 20px;
     font-size: 4rem;
-    width: 70%;
+    width: 40%;
     border-bottom-left-radius: 10mm;
 }
 .submit {
@@ -95,9 +95,10 @@ body {
 }
 .item-form-container form input {
     background: none;
-    padding: 5px;
-    width: 70%;
-    border-bottom-left-radius: 2mm;
+    padding: 20px;
+    font-size: 4rem;
+    width: 40%;
+    border-bottom-left-radius: 10mm;
 }
 .list-container {
     display: block;
@@ -105,20 +106,21 @@ body {
 }
 .task {
     margin: 0 auto;
-    border-bottom: solid 2px #1ABC9C ;
+    border-bottom: solid 4px #1ABC9C ;
     width: 90%;
     font-family: 'Quicksand', sans-serif;
-    font-size: 2rem;
-    padding: 5px;
+    font-size: 5rem;
+    padding: 10px;
     border-bottom-style: dotted;
+    overflow-wrap: break-word;
 }
 .item {
     margin: 0 auto;
-    border-bottom: solid 2px #1ABC9C ;
+    border-bottom: solid 4px #1ABC9C ;
     width: 90%;
     font-family: 'Quicksand', sans-serif;
-    font-size: 2rem;
-    padding: 5px;
+    font-size: 5rem;
+    padding: 10px;
     border-bottom-style: dotted;
     overflow-wrap: break-word;
 }
@@ -137,6 +139,7 @@ body {
 .clear-btn {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+    font-size: 4rem;
     color: black;
     padding: 5px;
     background: none;
@@ -144,7 +147,7 @@ body {
     margin-top: 5px;
 }
 .footer {
-    height: 10px;
+    height: 50px;
 }
 /* scrollbar */
 * {
