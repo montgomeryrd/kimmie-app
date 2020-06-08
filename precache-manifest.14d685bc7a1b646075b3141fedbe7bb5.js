@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7225735e10b65fc69b85b94f1c597b75",
+    "revision": "a38c783c30e9d143b1e7e13ca5883ae2",
     "url": "/kimmie-app/index.html"
   },
   {
-    "revision": "76e0c8d19b775ead3228",
-    "url": "/kimmie-app/static/css/main.c39269bd.chunk.css"
+    "revision": "824da7c89ba63cb898aa",
+    "url": "/kimmie-app/static/css/main.82797e0d.chunk.css"
   },
   {
     "revision": "65d9c9ecd3b1bdd91573",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kimmie-app/static/js/2.83ac2a41.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "76e0c8d19b775ead3228",
-    "url": "/kimmie-app/static/js/main.2ee262b6.chunk.js"
+    "revision": "824da7c89ba63cb898aa",
+    "url": "/kimmie-app/static/js/main.b38e9781.chunk.js"
   },
   {
     "revision": "6234bfe389a94877a224",

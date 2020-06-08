@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kimmie-app/static/css/main.c39269bd.chunk.css",
-    "main.js": "/kimmie-app/static/js/main.2ee262b6.chunk.js",
-    "main.js.map": "/kimmie-app/static/js/main.2ee262b6.chunk.js.map",
+    "main.css": "/kimmie-app/static/css/main.82797e0d.chunk.css",
+    "main.js": "/kimmie-app/static/js/main.b38e9781.chunk.js",
+    "main.js.map": "/kimmie-app/static/js/main.b38e9781.chunk.js.map",
     "runtime-main.js": "/kimmie-app/static/js/runtime-main.c249af6d.js",
     "runtime-main.js.map": "/kimmie-app/static/js/runtime-main.c249af6d.js.map",
     "static/js/2.83ac2a41.chunk.js": "/kimmie-app/static/js/2.83ac2a41.chunk.js",
     "static/js/2.83ac2a41.chunk.js.map": "/kimmie-app/static/js/2.83ac2a41.chunk.js.map",
     "index.html": "/kimmie-app/index.html",
-    "precache-manifest.3ac544e4114d0397ee130381cb64c073.js": "/kimmie-app/precache-manifest.3ac544e4114d0397ee130381cb64c073.js",
+    "precache-manifest.14d685bc7a1b646075b3141fedbe7bb5.js": "/kimmie-app/precache-manifest.14d685bc7a1b646075b3141fedbe7bb5.js",
     "service-worker.js": "/kimmie-app/service-worker.js",
-    "static/css/main.c39269bd.chunk.css.map": "/kimmie-app/static/css/main.c39269bd.chunk.css.map",
+    "static/css/main.82797e0d.chunk.css.map": "/kimmie-app/static/css/main.82797e0d.chunk.css.map",
     "static/js/2.83ac2a41.chunk.js.LICENSE.txt": "/kimmie-app/static/js/2.83ac2a41.chunk.js.LICENSE.txt",
     "static/media/add.svg": "/kimmie-app/static/media/add.d315a363.svg",
     "static/media/grocery.svg": "/kimmie-app/static/media/grocery.24a3f9f4.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.c249af6d.js",
     "static/js/2.83ac2a41.chunk.js",
-    "static/css/main.c39269bd.chunk.css",
-    "static/js/main.2ee262b6.chunk.js"
+    "static/css/main.82797e0d.chunk.css",
+    "static/js/main.b38e9781.chunk.js"
   ]
 }
