@@ -91,10 +91,10 @@ class Dashboard extends React.Component {
                 <Router>
                     <div className="top">
                         <NavLink to="/tasks" style={{ textDecoration: 'none' }}>
-                            <img src={add} width="40px" alt="task page"/>
+                            <img src={add} width="90%" alt="task page"/>
                         </NavLink>
                         <NavLink to="/shopping" style={{ textDecoration : 'none' }}>
-                            <img src={shopping} width="40px" alt="shopping page"/>
+                            <img src={shopping} width="90%" alt="shopping page"/>
                         </NavLink>
                     </div>
                     <Route path="/tasks" render={props =>
