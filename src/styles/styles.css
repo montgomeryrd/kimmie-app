@@ -39,14 +39,13 @@ body {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: 620px;
 }
 
 .top {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 10px;
+    padding: 50px;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -60,7 +59,7 @@ body {
 /* Task Page and Shopping List Styles */
 .title {
     font-family: 'Quicksand', sans-serif;
-    font-size: 2rem;
+    font-size: 4rem;
     text-align: center;
     padding: 5px;
 }
@@ -68,6 +67,7 @@ body {
     display: block;
     text-align: center;
     margin-left: 60%;
+    font-size: 2rem;
 }
 .task-form-container {
     display: block;
@@ -76,15 +76,17 @@ body {
 }
 .task-form-container form input {
     background: none;
-    padding: 5px;
+    padding: 20px;
+    font-size: 4rem;
     width: 70%;
-    border-bottom-left-radius: 2mm;
+    border-bottom-left-radius: 10mm;
 }
 .submit {
-    padding: 5px;
+    padding: 20px;
     margin-left: 5px;
+    font-size: 4rem;
     background: none;
-    border-top-right-radius: 2mm;
+    border-top-right-radius: 10mm;
 }
 .item-form-container {
     display: block;
