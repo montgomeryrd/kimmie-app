@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TaskForm from '../task-form/TaskForm';
+import like from '../../assets/like.svg';
 
 const TaskPage = (props) => {
     const [show, setShow] = useState(false);
@@ -11,7 +12,7 @@ const TaskPage = (props) => {
     const list = !props.tasks ? window.location.reload(true) : props.tasks.length ? (
         props.tasks.map((task, index) => {
             return (
-                <div className="task" key={index}>
+                <div className="task" unselectable="on" key={index}>
                     <span className="task-complete" style={{opacity : props.completedTasks.includes(task) ? .2 : 1}} onClick={() => {props.completeTask(index)}}>
                         {task.task}
                     </span>
@@ -25,14 +26,14 @@ const TaskPage = (props) => {
     )
     return (
         <div className="task-page-container">
-            <h1>{today}'s tasks {total}</h1>
+            <h1 className="title">{today}'s tasks: {total}</h1>
             { show ?
                 <div className="task-view" unselectable="on">
-                    <span onClick={toggle}>add tasks</span>
+                    <span className="subtitle" onClick={toggle}>...add tasks</span>
                 </div>
             : 
                 <div>
-                    <span onClick={toggle}>hide form</span>
+                    <span className="subtitle" onClick={toggle}>...hide form</span>
                     <TaskForm
                         task = {props.task}
                         handleChangeTasks = {props.handleChangeTasks}
@@ -40,9 +41,15 @@ const TaskPage = (props) => {
                     />
                 </div>
             }
-            <div>
+            <div className="list-container">
                 {list}
-                <button onClick={props.clearCompletedTasks}>clear</button>
+                { props.tasks.length ?
+                    <button className="clear-btn" onClick={props.clearCompletedTasks}>clear completed tasks</button>
+                : props.done ? 
+                    <img className="like" width="100px" src={like} alt="thumbs up"/> 
+                : 
+                    <p className="empty">empty</p>
+                }
             </div>
         </div>
     )

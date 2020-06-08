@@ -12,9 +12,9 @@ const ItemForm = (props) => {
                     onChange={props.handleChangeItems}
                     required={true}
                     autoComplete="off"
-                    placeholder="I need to buy..."
+                    placeholder="input item..."
                 />
-                <button type="submit" onSubmit={props.handleSubmitItems}>add item</button>
+                <button className="submit" type="submit" onSubmit={props.handleSubmitItems}>add item</button>
             </form>
         </div>
     )

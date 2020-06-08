@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import TaskPage from '../task-page/TaskPage';
 import ShoppingList from '../shopping-list/ShoppingList';
+import add from '../../assets/add.svg';
+import shopping from '../../assets/shopping-cart.svg';
+import '../../styles/styles.css';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -12,7 +15,8 @@ class Dashboard extends React.Component {
             tasks : [],
             items : [],
             completedTasks : [],
-            completedItems : []
+            completedItems : [],
+            done : false
         }
         this.handleChangeTasks=this.handleChangeTasks.bind(this);
         this.handleSubmitTasks=this.handleSubmitTasks.bind(this);
@@ -56,6 +60,7 @@ class Dashboard extends React.Component {
         this.state.tasks.forEach(task => !this.state.completedTasks.includes(task) ? tasks.push(task) : task);
         this.setState({tasks : tasks});
         this.setState({completedTasks : completedTasks});
+        this.setState({done : true});
     }
     // Item functions -----------------------
     addItem = (item) => {
@@ -80,21 +85,24 @@ class Dashboard extends React.Component {
     }
 
     render() {
+
         return (
             <div className="dashboard-container">
                 <Router>
-                    <NavLink to="/tasks" style={{ textDecoration: 'none' }}>
-                        <h2>Today's Tasks</h2>
-                    </NavLink>
-                    <NavLink to="/shopping" style={{ textDecoration : 'none' }}>
-                        <h2>Shopping List</h2>
-                    </NavLink>
-
+                    <div className="top">
+                        <NavLink to="/tasks" style={{ textDecoration: 'none' }}>
+                            <img src={add} width="40px" alt="task page"/>
+                        </NavLink>
+                        <NavLink to="/shopping" style={{ textDecoration : 'none' }}>
+                            <img src={shopping} width="40px" alt="shopping page"/>
+                        </NavLink>
+                    </div>
                     <Route path="/tasks" render={props =>
                         (<TaskPage 
                             task = {this.state.task}
                             tasks = {this.state.tasks}
                             completedTasks = {this.state.completedTasks}
+                            done = {this.state.done}
                             completeTask = {this.completeTask}
                             clearCompletedTasks = {this.clearCompletedTasks}
                             handleChangeTasks = {this.handleChangeTasks}
@@ -113,6 +121,7 @@ class Dashboard extends React.Component {
                         />)
                     }/>
                 </Router>
+                <div className="footer"></div>
             </div>
         )
     }

@@ -1,0 +1,161 @@
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+} 
+@-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-30px);} 
+    60% {-webkit-transform: translateY(-15px);} 
+ } 
+ 
+ @keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ }
+ 
+.like { 
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
+}
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background-image: url("../assets/sunt.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+.dashboard-container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 620px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 4px black;
+    border-top-left-radius: 10mm;
+    border-top-right-radius: 10mm;
+    border-bottom-left-radius: 10mm;
+    border-bottom-right-radius: 10mm;
+    width: 30%;
+}
+/* Task Page and Shopping List Styles */
+.title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    padding: 5px;
+}
+.subtitle {
+    display: block;
+    text-align: center;
+    margin-left: 60%;
+}
+.task-form-container {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.task-form-container form input {
+    background: none;
+    padding: 5px;
+    width: 70%;
+    border-bottom-left-radius: 2mm;
+}
+.submit {
+    padding: 5px;
+    margin-left: 5px;
+    background: none;
+    border-top-right-radius: 2mm;
+}
+.item-form-container {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.item-form-container form input {
+    background: none;
+    padding: 5px;
+    width: 70%;
+    border-bottom-left-radius: 2mm;
+}
+.list-container {
+    display: block;
+    text-align: center;
+}
+.task {
+    margin: 0 auto;
+    border-bottom: solid 2px #1ABC9C ;
+    width: 90%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    padding: 5px;
+    border-bottom-style: dotted;
+}
+.item {
+    margin: 0 auto;
+    border-bottom: solid 2px #1ABC9C ;
+    width: 90%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    padding: 5px;
+    border-bottom-style: dotted;
+    overflow-wrap: break-word;
+}
+.like {
+    margin-top: 10%;
+    margin-right: 50%;
+}
+.empty {
+    margin-top: 5%;
+}
+.groceries {
+    display: block;
+    opacity: .8;
+    margin-top: 3%;
+}
+.clear-btn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: black;
+    padding: 5px;
+    background: none;
+    border: none;
+    margin-top: 5px;
+}
+.footer {
+    height: 10px;
+}
+/* scrollbar */
+* {
+    scrollbar-width: thin;
+}
+*::-webkit-scrollbar {
+    width: 12px;
+}
+*::-webkit-scrollbar-track {
+    background: inherit;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #E91E63;
+    border-radius: 20px;
+    border: 3px solid white;
+}
