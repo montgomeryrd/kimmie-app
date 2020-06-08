@@ -12,9 +12,9 @@ const TaskForm = (props) => {
                     onChange={props.handleChangeTasks}
                     required={true}
                     autoComplete="off"
-                    placeholder="input as task"
+                    placeholder="input task..."
                 />
-                <button type="submit" onSubmit={props.handleSubmitTasks}>add</button>
+                <button className="submit" type="submit" onSubmit={props.handleSubmitTasks}>add task</button>
             </form>
         </div>
     )
