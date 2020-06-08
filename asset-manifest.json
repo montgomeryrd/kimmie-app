@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kimmie-app/static/css/main.fe9f54d8.chunk.css",
-    "main.js": "/kimmie-app/static/js/main.ef406a98.chunk.js",
-    "main.js.map": "/kimmie-app/static/js/main.ef406a98.chunk.js.map",
+    "main.js": "/kimmie-app/static/js/main.36363193.chunk.js",
+    "main.js.map": "/kimmie-app/static/js/main.36363193.chunk.js.map",
     "runtime-main.js": "/kimmie-app/static/js/runtime-main.c249af6d.js",
     "runtime-main.js.map": "/kimmie-app/static/js/runtime-main.c249af6d.js.map",
     "static/js/2.83ac2a41.chunk.js": "/kimmie-app/static/js/2.83ac2a41.chunk.js",
     "static/js/2.83ac2a41.chunk.js.map": "/kimmie-app/static/js/2.83ac2a41.chunk.js.map",
     "index.html": "/kimmie-app/index.html",
-    "precache-manifest.bd381285d2614bc59872d21bcbdb1cb8.js": "/kimmie-app/precache-manifest.bd381285d2614bc59872d21bcbdb1cb8.js",
+    "precache-manifest.43f380f635bd8ee5ec602a72a63fcd4c.js": "/kimmie-app/precache-manifest.43f380f635bd8ee5ec602a72a63fcd4c.js",
     "service-worker.js": "/kimmie-app/service-worker.js",
     "static/css/main.fe9f54d8.chunk.css.map": "/kimmie-app/static/css/main.fe9f54d8.chunk.css.map",
     "static/js/2.83ac2a41.chunk.js.LICENSE.txt": "/kimmie-app/static/js/2.83ac2a41.chunk.js.LICENSE.txt",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.c249af6d.js",
     "static/js/2.83ac2a41.chunk.js",
     "static/css/main.fe9f54d8.chunk.css",
-    "static/js/main.ef406a98.chunk.js"
+    "static/js/main.36363193.chunk.js"
   ]
 }
