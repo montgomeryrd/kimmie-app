@@ -14,7 +14,7 @@ const TaskPage = (props) => {
             return (
                 <div className="task" unselectable="on" key={index}>
                     <span className="task-complete" style={{opacity : props.completedTasks.includes(task) ? .2 : 1}} onClick={() => {props.completeTask(index)}}>
-                        {task.task}
+                        {task}
                     </span>
                 </div>
             )
@@ -29,11 +29,11 @@ const TaskPage = (props) => {
             <h1 className="title">{today}'s tasks: {total}</h1>
             { show ?
                 <div className="task-view" unselectable="on">
-                    <span className="subtitle" onClick={toggle}>...add tasks</span>
+                    <span className="subtitle" onClick={toggle}>( add tasks )</span>
                 </div>
             : 
                 <div>
-                    <span className="subtitle" onClick={toggle}>...hide form</span>
+                    <span className="subtitle" onClick={toggle}>( hide form )</span>
                     <TaskForm
                         task = {props.task}
                         handleChangeTasks = {props.handleChangeTasks}

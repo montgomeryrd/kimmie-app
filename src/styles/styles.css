@@ -31,6 +31,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     width: 100%;
     height: 100%;
 }
@@ -44,8 +45,7 @@ body {
 .top {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 50px;
+    padding: 10px;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -56,37 +56,46 @@ body {
     border-bottom-right-radius: 10mm;
     width: 30%;
 }
+.top img {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+}
 /* Task Page and Shopping List Styles */
 .title {
     font-family: 'Quicksand', sans-serif;
-    font-size: 5rem;
+    font-size: 1.8rem;
     text-align: center;
     padding: 5px;
 }
 .subtitle {
     display: block;
     text-align: center;
-    margin-left: 60%;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 .task-form-container {
     display: block;
     text-align: center;
     margin-top: 10px;
 }
-.task-form-container form input {
+.task-form-container form textarea {
     background: none;
-    padding: 20px;
-    font-size: 4rem;
-    width: 50%;
-    border-bottom-left-radius: 10mm;
+    padding: 10px;
+    border-top-left-radius: 4mm;
+    border-bottom-left-radius: 4mm;
+    border-top-right-radius: 4mm;
+    border-bottom-right-radius: 4mm;
 }
 .submit {
-    padding: 20px;
+    padding: 10px;
     margin-left: 5px;
-    font-size: 4rem;
-    background: none;
-    border-top-right-radius: 10mm;
+    font-size: 1.5rem;
+    background: #1ABC9C;
+    border: none;
+    border-radius: 5mm;
+
 }
 .item-form-container {
     display: block;

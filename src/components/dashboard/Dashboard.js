@@ -24,6 +24,17 @@ class Dashboard extends React.Component {
         this.handleSubmitItems=this.handleSubmitItems.bind(this);
 
     }
+    componentDidMount() {
+        try {
+            const json = localStorage.getItem('data');
+            this.setState({...JSON.parse(json)});
+        } catch (error) {};
+    }
+    componentDidUpdate(prevProps, prevState) {  
+        const json = JSON.stringify(this.state);
+        localStorage.setItem('data', json);
+    }
+    
     handleChangeTasks = (e) => {
         this.setState({task : e.target.value});
     }
@@ -41,8 +52,10 @@ class Dashboard extends React.Component {
         this.setState({item : ""});
     }
     // Task functions -----------------------
-    addTask = (task) =>{
-        this.setState({tasks : [...this.state.tasks, task]});
+    addTask = (list) =>{
+        list = this.state.task.match(/(.+)/g);
+        list = list.filter(item => item !== "");
+        this.setState({tasks : [...this.state.tasks, list]});
     }
     completeTask = (index) => {
         if(this.state.completedTasks.includes(this.state.tasks[index])) {
@@ -91,10 +104,10 @@ class Dashboard extends React.Component {
                 <Router>
                     <div className="top">
                         <NavLink to="/tasks" style={{ textDecoration: 'none' }}>
-                            <img src={add} width="90%" alt="task page"/>
+                            <img src={add} alt="task page"/>
                         </NavLink>
                         <NavLink to="/shopping" style={{ textDecoration : 'none' }}>
-                            <img src={shopping} width="90%" alt="shopping page"/>
+                            <img src={shopping} alt="shopping page"/>
                         </NavLink>
                     </div>
                     <Route path="/tasks" render={props =>
